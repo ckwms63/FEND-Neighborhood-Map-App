@@ -7,12 +7,12 @@ This is a project to learn how to create a React App that allows users to find l
 
 ## To launch the app:
 
-    1. Download or clone this repository.
-    2. Install all the necessary dependencies with `npm install`
-    3. Start the development server with `npm start`
-    4. The project will run on http://localhost:3000/
+1. Download or clone this repository.
+2. Install all the necessary dependencies with `npm install`
+3. Start the development server with `npm start`
+4. The project will run on http://localhost:3000/
 
-## Note:
+## Notes:
 
 The external dependencies used in this project are:
 * [Font Awesome](https://fontawesome.com/) for the menu icon
