@@ -49,7 +49,8 @@ class App extends Component {
       .then(response => {
         this.setState({
           venues: response.data.response.groups[0].items
-        }, this.renderMap())
+        }, this.renderMap());
+           this.filterFunction("");
       })
       .catch(error => {
         console.log("ERROR!! " + error)
