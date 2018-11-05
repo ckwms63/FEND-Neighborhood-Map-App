@@ -29,13 +29,9 @@ class Sidebar extends Component {
             />
 
             {
-              // this.props.filteredVenues &&
-              // this.props.filteredVenues.length > 0 &&
-              // this.props.filteredVenues.map((venue, index) => (
-
-                this.props.venues &&
-                this.props.venues.length > 0 &&
-                this.props.venues.map((venue, index) => (
+              this.props.filteredVenues &&
+              this.props.filteredVenues.length > 0 &&
+              this.props.filteredVenues.map((venue, index) => (
 
                 <div
                   key={index}
