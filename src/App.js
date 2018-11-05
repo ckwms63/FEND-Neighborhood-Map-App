@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import './App.css'
 import Header from './components/Header';
 import Sidebar from './components/Sidebar';
+import ErrorBoundary from './ErrorBoundary';
 import axios from 'axios'
 
 class App extends Component {
@@ -172,13 +173,16 @@ class App extends Component {
   render() {
     return (
 
-      <main>
+      <main role="main">
+        <ErrorBoundary>
         <div id="map"></div>
 
         <div>
           <Header />
           <button
             className="menu-button"
+            tabIndex="0"
+            aria-label="Menu"
             onClick={this.toggleDrawer}
           >
             <i className="fa fa-bars"></i>
@@ -186,16 +190,14 @@ class App extends Component {
         </div>
 
         <Sidebar
-
           open={this.state.open}
           toggleDrawer={this.toggleDrawer} // To open and close drawer
           clickListItem={this.clickListItem}
-          // venues={this.state.venues} // To display list of venues on drawer
           filterFunction = {this.filterFunction}
           filteredVenues={this.filteredVenues}
           {...this.state}
         />
-
+      </ErrorBoundary>
       </main>
     )
   }
