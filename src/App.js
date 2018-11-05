@@ -105,23 +105,6 @@ class App extends Component {
     this.setState({ markers: allMarkers });
   }
 
-
-  filterFunction(search) {
-
-    const filteredVenues = [];
-
-    let f = this.venues.filter(venue => venue.venue.name.toLowerCase().includes(search.toLowerCase()));
-
-        this.markers.forEach(marker => {
-          marker.title.toLowerCase().includes(search.toLowerCase()) == true ?
-          marker.setVisible(true) :
-          marker.setVisible(false);
-
-        });
-        this.setState({ filteredVenues: f });
-    }
-
-
   //To filter venues
       filterFunction = search => {
 
