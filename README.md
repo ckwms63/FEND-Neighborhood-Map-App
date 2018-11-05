@@ -5,7 +5,7 @@ GwG Udacity Project 7 FEND Neighborhood Map React App
 
 This is a project to learn how to create a React App that allows users to find locations of Thrift Stores in Chicago neighborhood. The locations are marked on the map and will display an info window when the maker is clicked. The menu button will display the sidebar that allows user to filter the list of venues and activate the marker when the venue's name is clicked.
 
-## To launch the app:
+## To launch the App:
 
 1. Download or clone this repository.
 2. Install all the necessary dependencies with `npm install`
@@ -15,6 +15,7 @@ This is a project to learn how to create a React App that allows users to find l
 ## Notes:
 
 The external dependencies used in this project are:
+* Google Maps API (https://developers.google.com/maps/documentation/javascript/tutorial)
 * [Font Awesome](https://fontawesome.com/) for the menu icon
 * [FourSquare](https://developer.foursquare.com/) to get info about the venues
 * [Axios](https://github.com/axios/axios) to get venues from FourSquare API
