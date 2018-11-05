@@ -33,12 +33,12 @@ h3 {
 .menu-button {
   position: absolute;
   display: flex;
-  top:0px;
-  font-size: 6vmin;
+  top:10px;
+  font-size: 30px;
   background: transparent;
   cursor: pointer;
   color: #fff;
-  margin: 15px;
+  margin: 10px;
 }
 
 .list-box {
