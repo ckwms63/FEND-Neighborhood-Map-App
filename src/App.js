@@ -105,31 +105,18 @@ class App extends Component {
     this.setState({ markers: allMarkers });
   }
 
-  //To filter venues
+      //To filter venues
       filterFunction = search => {
-
-        const filteredVenues = [];
-
-        this.state.venues.forEach(venue => {
-
-          //To display selected markers when there's a query
-          if (venue.venue.name.toLowerCase().includes(search.toLowerCase())) {
-
-            this.state.markers.forEach(marker => {
-
-              if (marker.title.toLowerCase().includes(search.toLowerCase())) {
-                marker.setVisible(true);
-                filteredVenues.push(venue);
-              } else {
-                marker.setVisible(false);
-              }//else
-            });
-              this.setState({
-              search: search,
-              filteredVenues: filteredVenues
-              });
-
-        }
+        //To filter sidebar venues list and markers
+        let filteredVenues = this.state.venues.filter(
+          venue => venue.venue.name.toLowerCase().includes(search.toLowerCase())
+        );
+          this.state.markers.forEach(marker => {
+            marker.title.toLowerCase().includes(search.toLowerCase()) == true ?
+            marker.setVisible(true) :
+            marker.setVisible(false);
+          });
+            this.setState({ filteredVenues, search });
 
           //To display all markers when there's no query
           if (search === "") {
@@ -140,8 +127,6 @@ class App extends Component {
               marker.setVisible(true);
             })
           }
-
-        })
       }
 
     clickListItem = (venue) => {
@@ -150,7 +135,6 @@ class App extends Component {
         marker => marker.id === venue.venue.id
       );
       window.google.maps.event.trigger(selected, 'click');
-      //this.map.setCenter(marker.position);
     }
 
   render() {
@@ -174,7 +158,7 @@ class App extends Component {
 
         <Sidebar
           open={this.state.open}
-          toggleDrawer={this.toggleDrawer} // To open and close drawer
+          toggleDrawer={this.toggleDrawer}
           clickListItem={this.clickListItem}
           filterFunction = {this.filterFunction}
           filteredVenues={this.filteredVenues}
