@@ -15,7 +15,7 @@ This is a project to learn how to create a React App that allows users to find l
 ## Notes:
 
 The external dependencies used in this project are:
-* Google Maps API (https://developers.google.com/maps/documentation/javascript/tutorial)
+* [Google Map API](https://developers.google.com/maps/documentation/javascript/tutorial)
 * [Font Awesome](https://fontawesome.com/) for the menu icon
 * [FourSquare](https://developer.foursquare.com/) to get info about the venues
 * [Axios](https://github.com/axios/axios) to get venues from FourSquare API
