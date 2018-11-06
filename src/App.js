@@ -94,7 +94,7 @@ class App extends Component {
         setTimeout(() => { marker.setAnimation(null) }, 1000);
 
         // To add venue's name and address to the info window
-        infowindow.setContent('<div aria-labelledby="venues name and address"><h3>'+name+'</br></br>'+address+'</h3></div>')
+        infowindow.setContent('<h3>'+name+'</br></br>'+address+'</h3>')
 
         // To open the info window
         infowindow.open(map, marker)
@@ -140,7 +140,7 @@ class App extends Component {
   render() {
     return (
 
-      <main role="main">
+      <main>
         <ErrorBoundary>
           <div id="map" role="application"></div>
 
