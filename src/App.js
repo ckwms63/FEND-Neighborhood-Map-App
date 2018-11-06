@@ -94,7 +94,7 @@ class App extends Component {
         setTimeout(() => { marker.setAnimation(null) }, 1000);
 
         // To add venue's name and address to the info window
-        infowindow.setContent('<h3>'+name+'</br></br>'+address+'</h3>')
+        infowindow.setContent('<div aria-labelledby="venues name and address"><h3>'+name+'</br></br>'+address+'</h3></div>')
 
         // To open the info window
         infowindow.open(map, marker)
@@ -142,29 +142,29 @@ class App extends Component {
 
       <main role="main">
         <ErrorBoundary>
-        <div id="map"></div>
+          <div id="map" role="application"></div>
 
-        <div>
-          <Header />
-          <button
-            className="menu-button"
-            tabIndex="0"
-            aria-label="Menu"
-            onClick={this.toggleDrawer}
-          >
-            <i className="fa fa-bars"></i>
-          </button>
-        </div>
+          <div>
+            <Header />
+             <button
+               className="menu-button"
+               tabIndex="0"
+               aria-label="Menu"
+               onClick={this.toggleDrawer}
+             >
+               <i className="fa fa-bars"></i>
+              </button>
+          </div>
 
-        <Sidebar
-          open={this.state.open}
-          toggleDrawer={this.toggleDrawer}
-          clickListItem={this.clickListItem}
-          filterFunction = {this.filterFunction}
-          filteredVenues={this.filteredVenues}
-          {...this.state}
-        />
-      </ErrorBoundary>
+          <Sidebar
+           open={this.state.open}
+           toggleDrawer={this.toggleDrawer}
+            clickListItem={this.clickListItem}
+           filterFunction = {this.filterFunction}
+            filteredVenues={this.filteredVenues}
+           {...this.state}
+         />
+        </ErrorBoundary>
       </main>
     )
   }
